@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ============== SEO / SOCIAL META ============== -->
+  <!-- Edit the values below with your real details before going live -->
+  <title>Jamel Duarte — Social Media Manager & Content Creator</title>
+  <meta name="description" content="Social Media Manager and Content Creator specializing in YouTube Automation, video editing, thumbnail design, and scroll-stopping short & long-form content that grows brands." />
+  <meta name="author" content="Jamel Duarte" />
+  <meta name="theme-color" content="#06090b" />
+
+  <!-- Open Graph (Facebook / LinkedIn) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Jamel Duarte — Social Media Manager & Content Creator" />
+  <meta property="og:description" content="I create scroll-stopping content that grows brands. YouTube Automation · Video Editing · Thumbnail Design." />
+  <meta property="og:image" content="og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Jamel Duarte — Social Media Manager & Content Creator" />
+  <meta name="twitter:description" content="I create scroll-stopping content that grows brands." />
+
+  <!-- ============== FONTS ============== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- ============== STYLES ============== -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- =========================================================
+       PRELOADER — cinematic count-up + curtain reveal
+  ========================================================== -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+      <span class="preloader__label">Loading reel</span>
+      <span class="preloader__count" id="preCount">00</span>
+    </div>
+    <div class="preloader__bar"><span id="preBar"></span></div>
+  </div>
+
+  <!-- Custom cursor (hidden on touch devices via JS/CSS) -->
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <span class="cursor__ring"></span>
+    <span class="cursor__dot"></span>
+    <span class="cursor__label" id="cursorLabel"></span>
+  </div>
+
+  <!-- Ambient animated grade glow (orange↔teal) -->
+  <div class="grade-glow" aria-hidden="true">
+    <span class="glow glow--warm"></span>
+    <span class="glow glow--cool"></span>
+    <span class="grain"></span>
+  </div>
+
+  <!-- =========================================================
+       NAVBAR
+  ========================================================== -->
+  <header class="nav" id="nav">
+    <a href="#top" class="nav__logo" aria-label="Home">
+      <span class="nav__rec"></span>
+      <span class="nav__name">Jamel<span class="dot">.</span></span>
+    </a>
+
+    <nav class="nav__links" id="navLinks" aria-label="Primary">
+      <a href="#work" data-link>Shorts</a>
+      <a href="#skills" data-link>Skills</a>
+      <a href="#channels" data-link>Long videos</a>
+      <a href="#process" data-link>Process</a>
+      <a href="#contact" class="nav__cta" data-magnetic>Let's talk</a>
+    </nav>
+
+    <button class="nav__burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <main id="top">
+
+    <!-- =========================================================
+         HERO
+    ========================================================== -->
+    <section class="hero" id="hero">
+      <!-- Cinematic letterbox bars -->
+      <span class="hero__bar hero__bar--top" aria-hidden="true"></span>
+      <span class="hero__bar hero__bar--bottom" aria-hidden="true"></span>
+
+      <div class="hero__grid">
+        <div class="hero__copy reveal">
+          <p class="eyebrow">
+            <span class="eyebrow__dot"></span>
+            Social Media Manager · Content Creator
+          </p>
+
+          <h1 class="hero__title">
+            I create <span class="grade-text">scroll-stopping</span> content that grows brands.
+          </h1>
+
+          <p class="hero__sub">
+            I help creators and businesses turn raw ideas into polished video —
+            from <strong>YouTube Automation</strong> and editing to thumbnails and
+            short-form content built to be watched, not skipped.
+          </p>
+
+          <div class="hero__actions">
+            <a href="#work" class="btn btn--primary" data-magnetic>
+              <span>View Portfolio</span>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="#contact" class="btn btn--ghost" data-magnetic>
+              <span>Contact Me</span>
+            </a>
+          </div>
+
+          <!-- Animated stat counters -->
+          <ul class="hero__stats">
+            <li><span class="stat" data-count="120">0</span><small>Videos edited</small></li>
+            <li><span class="stat" data-count="8" data-plus>0</span><small>Channels grown</small></li>
+            <li><span class="stat" data-count="15" data-suffix="M+">0</span><small>Views generated</small></li>
+          </ul>
+        </div>
+
+        <!-- Portrait framed as an editing viewport -->
+        <div class="hero__frame reveal" data-parallax data-media>
+          <div class="frame">
+            <div class="frame__top">
+              <span class="frame__rec"><i></i>REC</span>
+              <span class="frame__tc" id="timecode">00:00:00:00</span>
+            </div>
+            <!-- PORTRAIT PLACEHOLDER — replace .frame__photo background with your image -->
+            <div class="frame__photo" role="img" aria-label="Portrait of Jamel Duarte">
+              <span class="frame__avatar">JD</span>
+              <span class="frame__grade"></span>
+            </div>
+            <div class="frame__scrub">
+              <span class="frame__play">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <span class="frame__track"><i></i></span>
+              <span class="frame__ratio">9:16</span>
+            </div>
+          </div>
+
+          <!-- Floating UI chips -->
+          <span class="chip chip--wave" data-float>
+            <svg viewBox="0 0 40 24" width="40" height="24"><g fill="currentColor"><rect x="0" y="9" width="3" height="6" rx="1.5"/><rect x="6" y="5" width="3" height="14" rx="1.5"/><rect x="12" y="2" width="3" height="20" rx="1.5"/><rect x="18" y="7" width="3" height="10" rx="1.5"/><rect x="24" y="4" width="3" height="16" rx="1.5"/><rect x="30" y="9" width="3" height="6" rx="1.5"/><rect x="36" y="6" width="3" height="12" rx="1.5"/></g></svg>
+          </span>
+          <span class="chip chip--key" data-float>Keyframe ◆</span>
+          <span class="chip chip--cut" data-float>Cut ✂</span>
+        </div>
+      </div>
+
+      <a href="#about" class="hero__scroll" aria-label="Scroll down">
+        <span>Scroll</span>
+        <i></i>
+      </a>
+    </section>
+
+    <!-- Marquee tape -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>YouTube Automation</span><span>•</span><span>Video Editing</span><span>•</span><span>Thumbnail Design</span><span>•</span><span>Short-Form</span><span>•</span><span>Content Planning</span><span>•</span>
+        <span>YouTube Automation</span><span>•</span><span>Video Editing</span><span>•</span><span>Thumbnail Design</span><span>•</span><span>Short-Form</span><span>•</span><span>Content Planning</span><span>•</span>
+      </div>
+    </div>
+
+    <!-- =========================================================
+         ABOUT
+    ========================================================== -->
+    <section class="section about" id="about">
+      <div class="section__head reveal">
+        <p class="eyebrow">// About</p>
+        <h2 class="section__title">The person behind the edit.</h2>
+      </div>
+
+      <div class="about__body">
+        <div class="about__lead reveal">
+          <p>
+            I'm a Social Media Manager and Content Creator who helps creators and
+            businesses produce engaging content across YouTube, Facebook, Instagram
+            and TikTok — with a strong focus on <strong>YouTube Automation</strong>.
+          </p>
+        </div>
+        <div class="about__detail reveal">
+          <p>
+            My work runs the full pipeline: researching viral topics, organizing
+            scripts, editing video, designing thumbnails that earn the click, and
+            preparing uploads that are clean and SEO-ready. I keep projects tidy in
+            Google Drive and Sheets, and I lean on an AI-assisted workflow to move
+            faster without cutting quality.
+          </p>
+          <p>
+            Whether it's faceless automation channels or personal brands, my job is
+            simple: make content people actually stop to watch — and make the brand
+            behind it look sharp doing it.
+          </p>
+          <ul class="about__tags">
+            <li>YouTube Automation</li>
+            <li>Long & Short-form</li>
+            <li>Editing</li>
+            <li>Thumbnails</li>
+            <li>Multi-platform</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SKILLS
+    ========================================================== -->
+    <section class="section skills" id="skills">
+      <div class="section__head reveal">
+        <p class="eyebrow">// Skills</p>
+        <h2 class="section__title">Tools I work in every day.</h2>
+      </div>
+
+      <div class="skills__grid" id="skillsGrid">
+        <!-- Cards injected by script.js for cleanliness; static fallback below -->
+      </div>
+    </section>
+
+    <!-- =========================================================
+         PORTFOLIO / WORK
+    ========================================================== -->
+    <section class="section work" id="work">
+      <div class="section__head reveal">
+        <p class="eyebrow">// Short channels</p>
+        <h2 class="section__title">Short channels I've helped build.</h2>
+        <p class="section__note">Each project opens a Drive folder with screenshots, exports and source files.</p>
+      </div>
+
+      <div class="work__grid">
+        <!-- PROJECT 1 -->
+        <article class="project reveal" data-tilt>
+          <a class="project__media" href="https://drive.google.com/drive/folders/1Hvy3-lHoMUWa9Q2aYzhR7PhBPX4lfAq-?usp=sharing" target="_blank" rel="noopener" data-media aria-label="Open sample edits on Google Drive">
+            <span class="project__ph">
+              <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            </span>
+            <span class="project__play"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+          </a>
+          <div class="project__body">
+            <h3>Sample Edits — Motivation Reels</h3>
+            <p>Short-form motivation video edits cut for retention — strong hooks, captions and clean pacing. Open the folder to watch the samples.</p>
+            <div class="project__tools"><span>CapCut</span><span>Short-form</span><span>Motivation</span></div>
+            <a class="project__btn" href="https://drive.google.com/drive/folders/1Hvy3-lHoMUWa9Q2aYzhR7PhBPX4lfAq-?usp=sharing" target="_blank" rel="noopener" data-magnetic>View Samples →</a>
+          </div>
+        </article>
+
+        <!-- PROJECT 2 -->
+        <article class="project reveal" data-tilt>
+          <a class="project__media" href="https://www.tiktok.com/@cartcircuit" target="_blank" rel="noopener" data-media aria-label="Visit Cart Circuit on TikTok">
+            <span class="project__ph">
+              <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            </span>
+            <span class="project__play"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+          </a>
+          <div class="project__body">
+            <h3>Cart Circuit</h3>
+            <p>TikTok Shop finds channel — 1.4K+ followers and 15.8K likes, with viral edits reaching up to 337K plays per video.</p>
+            <div class="project__tools"><span>TikTok</span><span>CapCut</span><span>Short-form</span></div>
+            <a class="project__btn" href="https://www.tiktok.com/@cartcircuit" target="_blank" rel="noopener" data-magnetic>View Channel →</a>
+          </div>
+        </article>
+
+        <!-- PROJECT 3 -->
+        <article class="project reveal" data-tilt>
+          <a class="project__media" href="https://www.canva.com/design/DAGvnI-DMg4/dELCDNOR1snxxg1_jq_rPQ/edit" target="_blank" rel="noopener" data-media aria-label="Open thumbnail designs on Canva">
+            <span class="project__ph">
+              <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            </span>
+            <span class="project__play"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+          </a>
+          <div class="project__body">
+            <h3>Thumbnail Design Set</h3>
+            <p>High-CTR thumbnails with bold type, clean subject cut-outs and a consistent style system across a channel.</p>
+            <div class="project__tools"><span>Canva</span><span>Photoshop</span><span>CTR</span></div>
+            <a class="project__btn" href="https://www.canva.com/design/DAGvnI-DMg4/dELCDNOR1snxxg1_jq_rPQ/edit" target="_blank" rel="noopener" data-magnetic>View Project →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         FEATURED CHANNELS
+    ========================================================== -->
+    <section class="section channels" id="channels">
+      <div class="section__head reveal">
+        <p class="eyebrow">// Long video channels</p>
+        <h2 class="section__title">Long video channels I've helped build.</h2>
+      </div>
+
+      <div class="channels__grid">
+        <!-- CHANNEL 1 -->
+        <article class="channel reveal" data-tilt>
+          <a class="channel__media" data-media href="https://youtube.com/@4chanpost" target="_blank" rel="noopener" aria-label="Visit 4Chan Post on YouTube">
+            <span class="channel__ph">▶</span>
+          </a>
+          <div class="channel__body">
+            <div class="channel__head">
+              <h3>4Chan Post</h3>
+              <span class="channel__role">YouTube Automation Assistant</span>
+            </div>
+            <p class="channel__niche">Greentext stories · Long-form narration</p>
+            <div class="channel__stats">
+              <div><b>9.1K</b><small>Subscribers</small></div>
+              <div><b>177</b><small>Videos</small></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- CHANNEL 2 -->
+        <article class="channel reveal" data-tilt>
+          <a class="channel__media" data-media href="https://youtube.com/@4chanromance-n6p" target="_blank" rel="noopener" aria-label="Visit 4Chan Romance on YouTube">
+            <span class="channel__ph">▶</span>
+          </a>
+          <div class="channel__body">
+            <div class="channel__head">
+              <h3>4Chan Romance</h3>
+              <span class="channel__role">Video Editor</span>
+            </div>
+            <p class="channel__niche">Greentext stories · Anime narration</p>
+            <div class="channel__stats">
+              <div><b>2.35K</b><small>Subscribers</small></div>
+              <div><b>114</b><small>Videos</small></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- CHANNEL 3 -->
+        <article class="channel reveal" data-tilt>
+          <a class="channel__media" data-media href="https://youtube.com/@memoriesfrombritannia" target="_blank" rel="noopener" aria-label="Visit Memories From Britannia on YouTube">
+            <span class="channel__ph">▶</span>
+          </a>
+          <div class="channel__body">
+            <div class="channel__head">
+              <h3>Memories From Britannia</h3>
+              <span class="channel__role">Thumbnail Designer</span>
+            </div>
+            <p class="channel__niche">UK nostalgia · Documentary</p>
+            <div class="channel__stats">
+              <div><b>82K</b><small>Views</small></div>
+              <div><b>652</b><small>Subscribers</small></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         CONTENT WORKFLOW — edit-timeline
+    ========================================================== -->
+    <section class="section process" id="process">
+      <div class="section__head reveal">
+        <p class="eyebrow">// Process</p>
+        <h2 class="section__title">How a video gets made.</h2>
+      </div>
+
+      <ol class="timeline" id="timeline">
+        <li class="tl reveal">
+          <span class="tl__node"></span>
+          <span class="tl__no">01</span>
+          <div class="tl__card">
+            <span class="tl__icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+            </span>
+            <h3>Research</h3>
+            <p>Find viral angles, validate topics, and write SEO-friendly titles.</p>
+          </div>
+        </li>
+        <li class="tl reveal">
+          <span class="tl__node"></span>
+          <span class="tl__no">02</span>
+          <div class="tl__card">
+            <span class="tl__icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h5"/></svg>
+            </span>
+            <h3>Script Organization</h3>
+            <p>Structure scripts and assets cleanly in Drive and Sheets.</p>
+          </div>
+        </li>
+        <li class="tl reveal">
+          <span class="tl__node"></span>
+          <span class="tl__no">03</span>
+          <div class="tl__card">
+            <span class="tl__icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3z"/></svg>
+            </span>
+            <h3>Video Editing</h3>
+            <p>Cut for retention — pacing, sound, captions and motion.</p>
+          </div>
+        </li>
+        <li class="tl reveal">
+          <span class="tl__node"></span>
+          <span class="tl__no">04</span>
+          <div class="tl__card">
+            <span class="tl__icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="14" rx="2"/><circle cx="8" cy="9" r="1.5"/><path d="M3 16l5-4 4 3 4-5 5 6"/></svg>
+            </span>
+            <h3>Thumbnail Design</h3>
+            <p>Bold, high-CTR thumbnails that earn the click.</p>
+          </div>
+        </li>
+        <li class="tl reveal">
+          <span class="tl__node"></span>
+          <span class="tl__no">05</span>
+          <div class="tl__card">
+            <span class="tl__icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 16V4M8 8l4-4 4 4"/><path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+            </span>
+            <h3>Upload Preparation</h3>
+            <p>Titles, descriptions, tags and scheduling — ready to publish.</p>
+          </div>
+        </li>
+        <li class="tl reveal">
+          <span class="tl__node"></span>
+          <span class="tl__no">06</span>
+          <div class="tl__card">
+            <span class="tl__icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12l5 5L20 7"/></svg>
+            </span>
+            <h3>Content Delivery</h3>
+            <p>Final files delivered, organized and ready to perform.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- =========================================================
+         TESTIMONIALS
+    ========================================================== -->
+    <!--
+    <section class="section quotes" id="testimonials">
+      <div class="section__head reveal">
+        <p class="eyebrow">// Testimonials</p>
+        <h2 class="section__title">What clients say.</h2>
+      </div>
+
+      <div class="quotes__grid">
+        <figure class="quote reveal" data-tilt>
+          <blockquote>"Reliable, fast, and the edits actually convert. Our watch time jumped within the first month."</blockquote>
+          <figcaption><span class="quote__av">A</span><span><b>Alex R.</b><small>Channel Owner</small></span></figcaption>
+        </figure>
+        <figure class="quote reveal" data-tilt>
+          <blockquote>"The thumbnails alone changed our click-through rate. Easy to work with and very organized."</blockquote>
+          <figcaption><span class="quote__av">M</span><span><b>Maria L.</b><small>Brand Manager</small></span></figcaption>
+        </figure>
+        <figure class="quote reveal" data-tilt>
+          <blockquote>"Handed off the whole automation pipeline and it just runs. Exactly the partner we needed."</blockquote>
+          <figcaption><span class="quote__av">D</span><span><b>David K.</b><small>Founder</small></span></figcaption>
+        </figure>
+      </div>
+    </section>
+    -->
+
+
+
+    <!-- =========================================================
+         CONTACT
+    ========================================================== -->
+    <section class="section contact" id="contact">
+      <div class="contact__inner">
+        <div class="contact__head reveal">
+          <p class="eyebrow">// Contact</p>
+          <h2 class="section__title">Let's make something worth watching.</h2>
+          <p class="contact__sub">Tell me about your channel or brand and I'll get back to you.</p>
+
+          <ul class="contact__links">
+            <li><a href="mailto:hello@example.com" data-magnetic>Email</a></li>
+            <li><a href="https://facebook.com/" target="_blank" rel="noopener" data-magnetic>Facebook</a></li>
+            <li><a href="https://instagram.com/" target="_blank" rel="noopener" data-magnetic>Instagram</a></li>
+            <li><a href="https://tiktok.com/" target="_blank" rel="noopener" data-magnetic>TikTok</a></li>
+            <li><a href="https://wa.me/000000000" target="_blank" rel="noopener" data-magnetic>WhatsApp</a></li>
+            <li><a href="https://drive.google.com/" target="_blank" rel="noopener" data-magnetic>Drive Portfolio</a></li>
+          </ul>
+        </div>
+
+        <!-- Note: front-end only. Hook this up to Formspree / your backend to receive messages. -->
+        <form class="contact__form reveal" id="contactForm" novalidate>
+          <div class="field">
+            <input type="text" id="name" name="name" placeholder=" " required />
+            <label for="name">Your name</label>
+          </div>
+          <div class="field">
+            <input type="email" id="email" name="email" placeholder=" " required />
+            <label for="email">Email</label>
+          </div>
+          <div class="field">
+            <textarea id="message" name="message" rows="4" placeholder=" " required></textarea>
+            <label for="message">Project details</label>
+          </div>
+          <button type="submit" class="btn btn--primary btn--block" data-magnetic>
+            <span>Send message</span>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+          <p class="contact__status" id="formStatus" role="status"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================
+       FOOTER
+  ========================================================== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <a href="#top" class="footer__logo">Jamel<span class="dot">.</span></a>
+      <p class="footer__copy">© <span id="year"></span> Jamel Duarte — Content that grows brands.</p>
+      <a href="#top" class="footer__top" data-magnetic>Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
